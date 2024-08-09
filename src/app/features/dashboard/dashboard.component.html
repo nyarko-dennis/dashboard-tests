@@ -1,0 +1,244 @@
+<div>
+  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+  <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
+    <!--
+      Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+
+      Entering: "transition-opacity ease-linear duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "transition-opacity ease-linear duration-300"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-gray-900/80"></div>
+
+    <app-sidebar-component></app-sidebar-component>
+  </div>
+
+  <!-- Static sidebar for desktop -->
+  <app-desktop-sidebar-component></app-desktop-sidebar-component>
+
+  <div class="lg:pl-72">
+    <div class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+      <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <!-- Separator -->
+      <div class="h-6 w-px bg-gray-900/10 lg:hidden" aria-hidden="true"></div>
+
+      <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+        <form class="relative flex flex-1" action="#" method="GET">
+          <label for="search-field" class="sr-only">Search</label>
+          <svg class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+          </svg>
+          <input id="search-field" class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm" placeholder="Search..." type="search" name="search">
+        </form>
+        <div class="flex items-center gap-x-4 lg:gap-x-6">
+          <!-- Profile dropdown -->
+          <app-profile-dropdown></app-profile-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <main class="py-10">
+      <div class="sm:px-6 lg:px-4">
+        <!-- Your content -->
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-4">
+          <div>
+            <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="relative overflow-hidden rounded-lg bg-white pb-4 pt-5 shadow sm:px-6 sm:pt-6">
+                <dt>
+                  <div class="absolute rounded-md bg-indigo-500 p-3">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                    </svg>
+                  </div>
+                  <p class="ml-16 truncate text-sm font-medium text-gray-500">Total Volume</p>
+                </dt>
+                <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+                  <p class="text-2xl font-semibold text-gray-900">71,897</p>
+                  <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+                    <svg class="h-5 w-5 flex-shrink-0 self-center text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only"> Increased by </span>
+                    122
+                  </p>
+                </dd>
+              </div>
+              <div class="relative overflow-hidden rounded-lg bg-white pb-4 pt-5 shadow sm:px-6 sm:pt-6">
+                <dt>
+                  <div class="absolute rounded-md bg-indigo-500 p-3">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+                    </svg>
+                  </div>
+                  <p class="ml-16 truncate text-sm font-medium text-gray-500">Total Volume (Value)</p>
+                </dt>
+                <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+                  <p class="text-2xl font-semibold text-gray-900">58.16%</p>
+                  <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+                    <svg class="h-5 w-5 flex-shrink-0 self-center text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only"> Increased by </span>
+                    5.4%
+                  </p>
+                </dd>
+              </div>
+              <div class="relative overflow-hidden rounded-lg bg-white pb-4 pt-5 shadow sm:px-6 sm:pt-6">
+                <dt>
+                  <div class="absolute rounded-md bg-indigo-500 p-3">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                    </svg>
+                  </div>
+                  <p class="ml-16 truncate text-sm font-medium text-gray-500">Open Orders</p>
+                </dt>
+                <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+                  <p class="text-2xl font-semibold text-gray-900">71,897</p>
+                  <p class="ml-2 flex items-baseline text-sm font-semibold text-red-600">
+                    <svg class="h-5 w-5 flex-shrink-0 self-center text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only"> Decreased by </span>
+                    3.2%
+                  </p>
+                </dd>
+              </div>
+              <div class="relative overflow-hidden rounded-lg bg-white pb-4 pt-5 shadow sm:px-6 sm:pt-6">
+                <dt>
+                  <div class="absolute rounded-md bg-indigo-500 p-3">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                    </svg>
+                  </div>
+                  <p class="ml-16 truncate text-sm font-medium text-gray-500">Wallet Balance</p>
+                </dt>
+                <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+                  <p class="text-2xl font-semibold text-gray-900">$1,000,897</p>
+                  <p class="ml-2 flex items-baseline text-sm font-semibold text-red-600">
+                    <svg class="h-5 w-5 flex-shrink-0 self-center text-red-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only"> Decreased by </span>
+                    3.2%
+                  </p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="container mt-10 mx-auto sm:px-6 lg:px-8 flex gap-10">
+          <div class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow w-1/2">
+            <div class="px-4 py-5 sm:px-6 bg-gray-900">
+              <!-- Content goes here -->
+              <!-- We use less vertical padding on card headers on desktop than on body sections -->
+              <div class="flex items-center justify-between">
+                <h6 class="text-xl font-semibold text-white">Price Changes </h6>
+                <span class="inline-flex items-center rounded-md bg-blue-400/10 px-2 py-1 text-xs font-medium text-blue-400 ring-1 ring-inset ring-blue-400/30">MAL1</span>
+              </div>
+            </div>
+            <div class="px-4 py-5 sm:p-6">
+              <div class="px-4 sm:px-6 lg:px-8">
+                <div class="flow-root">
+                  <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                      <table class="min-w-full divide-y divide-gray-300">
+                        <thead>
+                        <tr>
+                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Ticker</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">LTPrice</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Change</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Change %</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Spread %</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Bid</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ask</th>
+                        </tr>
+                        </thead>
+                        <tbody *ngIf="exchangeOneData.length" class="divide-y divide-gray-200">
+                        <tr *ngFor="let data of exchangeOneData">
+                          <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{data.ticker}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.currentPrice).toFixed(2)}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">-{{(data.priceChange).toFixed(2)}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.priceChangePercentage).toFixed(2)}}</td>
+                          <td [ngClass]="Math.abs(data.bidAskSpreadPercentage) > 100 ? 'text-red-500' : 'text-green-500'" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            {{(data.bidAskSpreadPercentage).toFixed(2)}}
+                          </td>
+                          <td [ngClass]="data.bid <= data.currentPrice ? 'text-red-500' : 'text-green-500'" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.bid).toFixed(2)}}</td>
+                          <td [ngClass]="data.ask >= data.currentPrice ? 'text-red-500' : 'text-green-500'"  class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            {{(data.ask).toFixed(2)}}
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow w-1/2">
+            <div class="px-4 py-5 sm:px-6 bg-gray-900">
+              <!-- Content goes here -->
+              <div class="flex items-center justify-between">
+                <h6 class="text-xl font-semibold text-white">Price Changes </h6>
+                <span class="inline-flex items-center rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-500/20">MAL2</span>
+              </div>
+              <!-- We use less vertical padding on card headers on desktop than on body sections -->
+            </div>
+            <div class="px-4 py-5 sm:p-6">
+              <div class="px-4 sm:px-6 lg:px-8">
+                <div class="flow-root">
+                  <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                      <table class="min-w-full divide-y divide-gray-300">
+                        <thead>
+                        <tr>
+                          <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Ticker</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">LTPrice</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Change</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Change %</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Spread %</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Bid</th>
+                          <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ask</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr *ngFor="let data of exchangeTwoData">
+                          <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{data.ticker}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.currentPrice).toFixed(2)}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">-{{(data.priceChange).toFixed(2)}}</td>
+                          <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.priceChangePercentage).toFixed(2)}}</td>
+                          <td [ngClass]="Math.abs(data.bidAskSpreadPercentage) > 100 ? 'text-red-500' : 'text-green-500'" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            {{(data.bidAskSpreadPercentage).toFixed(2)}}
+                          </td>
+                          <td [ngClass]="data.bid <= data.currentPrice ? 'text-red-500' : 'text-green-500'" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{(data.bid).toFixed(2)}}</td>
+                          <td [ngClass]="data.ask >= data.currentPrice ? 'text-red-500' : 'text-green-500'"  class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                            {{(data.ask).toFixed(2)}}
+                          </td>
+                        </tr>
+
+                        <!-- More people... -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
